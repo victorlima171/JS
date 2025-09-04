@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+    <div class="text-center space-y-4">
+    <h1 class="text-2xl font-bold text-gray-800 mb-6">Atividades</h1>
+        
+    <button 
+        class="btn1" onclick="clicou1(1)">Antes e depois
+        
+    </button>
+        
+    <button 
+        class="btn2" onclick="clicou1(2)">Celular troco
+        >
+        Calculadora de Troco
+    </button>
+    </div>
+
+    <script>
+        function antesDepois() {
+            const numero = prompt("Digite um número inteiro:");
+            if (numero) {
+                const num = parseInt(numero);
+                if (!isNaN(num)) {
+                    alert(`Antecessor: ${num - 1} | Sucessor: ${num + 1}`);
+                } else {
+                    alert("Digite um número válido!");
+        }
+        }
+        }
+
+        function calcularTroco() {
+            const produto = prompt("Nome do produto:");
+            if (!produto) return;
+            
+            const preco = parseFloat(prompt("Preço do produto:"));
+            if (isNaN(preco)) return alert("Preço inválido!");
+            
+            const pago = parseFloat(prompt("Valor pago:"));
+            if (isNaN(pago) || pago < preco) return alert("Valor inválido!");
+            
+            const troco = pago - preco;
+            alert(`Você comprou ${produto}, que custa R$${preco.toFixed(2)}. Deu R$${pago.toFixed(2)} em dinheiro e vai receber R$${troco.toFixed(2)} de troco! Volte sempre!`);
+        }
+    </script>
+</body>
+</html>
