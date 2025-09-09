@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+</head>
+<body>
+    <script>
+        const idade = prompt("Qual é a sua idade?");
+        let mensagem = "";
+
+        if (idade !== null && idade !== "" && !isNaN(idade)) {
+            if (Number(idade) >= 18) {
+                mensagem = "Você é maior de idade.";
+            } else {
+                mensagem = "Você é menor de idade.";
+            }
+        } else {
+            mensagem = "Idade inválida.";
+        }
+
+        document.body.innerHTML += `<h2>${mensagem}</h2>`;
+    </script>
+</body>
+</html>
